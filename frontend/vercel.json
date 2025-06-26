@@ -28,6 +28,6 @@
     }
   ],
   "env": {
-    "REACT_APP_API_URL": "https://seu-backend.onrender.com"
+    "REACT_APP_API_URL": "https://your-backend.onrender.com"
   }
 } 

@@ -1,47 +1,47 @@
-# AcquaTest - Sistema de Controle de Consumo de Água
+# AcquaTest - Water Consumption Control System
 
-Sistema completo com frontend React e backend Node.js para controle de consumo de água.
+Complete system with React frontend and Node.js backend for water consumption control.
 
-## 🚀 Deploy
+## 🚀 Deployment
 
 ### Frontend (Vercel)
 
-1. **Conecte o repositório ao Vercel:**
-   - Vá para [vercel.com](https://vercel.com)
-   - Importe o repositório do GitHub
-   - Configure o diretório raiz como `frontend/`
+1. **Connect repository to Vercel:**
+   - Go to [vercel.com](https://vercel.com)
+   - Import the GitHub repository
+   - Set root directory as `frontend/`
 
-2. **Configure as variáveis de ambiente:**
+2. **Configure environment variables:**
    ```
-   REACT_APP_API_URL=https://seu-backend.onrender.com
+   REACT_APP_API_URL=https://your-backend.onrender.com
    ```
 
-3. **Deploy automático:**
-   - O Vercel detectará automaticamente que é um projeto React
+3. **Automatic deployment:**
+   - Vercel will automatically detect it's a React project
    - Build command: `npm run build`
    - Output directory: `build`
 
 ### Backend (Render)
 
-1. **Conecte o repositório ao Render:**
-   - Vá para [render.com](https://render.com)
-   - Crie um novo Web Service
-   - Conecte ao repositório do GitHub
-   - Configure o diretório raiz como `backend/`
+1. **Connect repository to Render:**
+   - Go to [render.com](https://render.com)
+   - Create a new Web Service
+   - Connect to GitHub repository
+   - Set root directory as `backend/`
 
-2. **Configure o serviço:**
+2. **Configure the service:**
    - **Build Command:** `npm install`
    - **Start Command:** `npm start`
    - **Environment:** Node
    - **Plan:** Free
 
-3. **Variáveis de ambiente (opcional):**
+3. **Environment variables (optional):**
    ```
    NODE_ENV=production
    PORT=10000
    ```
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
 ```
 AcquaTest/
@@ -56,7 +56,7 @@ AcquaTest/
     └── render.yaml
 ```
 
-## 🔧 Desenvolvimento Local
+## 🔧 Local Development
 
 ### Backend
 ```bash
@@ -72,28 +72,28 @@ npm install
 npm start
 ```
 
-## 📝 Credenciais de Teste
+## 📝 Test Credentials
 
-- **Usuário:** admin
-- **Senha:** 1234
+- **Username:** admin
+- **Password:** 1234
 
-## 🔗 URLs de Produção
+## 🔗 Production URLs
 
-Após o deploy, atualize o arquivo `frontend/vercel.json` com a URL do seu backend:
+After deployment, update the `frontend/vercel.json` file with your backend URL:
 
 ```json
 {
   "env": {
-    "REACT_APP_API_URL": "https://seu-backend.onrender.com"
+    "REACT_APP_API_URL": "https://your-backend.onrender.com"
   }
 }
 ```
 
-## 📊 Funcionalidades
+## 📊 Features
 
-- ✅ Login de usuário
-- ✅ Captura de foto com webcam
-- ✅ Registro de consumo de água
-- ✅ Cálculo automático de conta
-- ✅ Interface responsiva
-- ✅ Deploy automatizado 
+- ✅ User login
+- ✅ Webcam photo capture
+- ✅ Water consumption registration
+- ✅ Automatic bill calculation
+- ✅ Responsive interface
+- ✅ Automated deployment 
