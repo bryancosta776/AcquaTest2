@@ -9,6 +9,9 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+// Configuração para produção (Render)
+const PORT = process.env.PORT || 5000;
+
 const uploadDir = path.join(__dirname, 'uploads');
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir);
@@ -40,4 +43,9 @@ app.post('/consumo', upload.single('foto'), (req, res) => {
   });
 });
 
-app.listen(5000, () => console.log('Backend rodando na porta 5000')); 
+// Rota de health check para Render
+app.get('/health', (req, res) => {
+  res.json({ status: 'OK', timestamp: new Date().toISOString() });
+});
+
+app.listen(PORT, () => console.log(`Backend rodando na porta ${PORT}`)); 

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { API_ENDPOINTS } from '../config/api';
 import WebcamCapture from '../components/WebcamCapture';
 import Logo from '../components/Logo';
 
@@ -25,7 +26,7 @@ export default function Dashboard() {
     const token = localStorage.getItem('token');
     const config = { headers: { 'Authorization': `Bearer ${token}` } };
 
-    const resp = await axios.post('http://localhost:5000/consumo', formData, config);
+    const resp = await axios.post(API_ENDPOINTS.CONSUMO, formData, config);
     setResposta(resp.data);
   };
 
