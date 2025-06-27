@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "name": "acquatest-frontend",
   "builds": [
     {
       "src": "frontend/package.json",
@@ -10,6 +11,22 @@
     }
   ],
   "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
+      "src": "/manifest.json",
+      "dest": "/manifest.json"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/robots.txt"
+    },
     {
       "src": "/(.*)",
       "dest": "/index.html"
