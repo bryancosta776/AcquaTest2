@@ -3,6 +3,7 @@ services:
     name: acquatest-backend
     env: node
     plan: free
+    region: oregon
     rootDir: backend
     buildCommand: npm install
     startCommand: npm start
@@ -10,4 +11,5 @@ services:
       - key: NODE_ENV
         value: production
       - key: PORT
-        value: 10000 
+        value: 10000
+    autoDeploy: true 

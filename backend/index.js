@@ -20,22 +20,36 @@ const upload = multer({ dest: uploadDir });
 
 const USERS = [{ username: 'admin', password: '1234' }];
 
+// Rota raiz
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'AcquaTest Backend API',
+    status: 'running',
+    endpoints: {
+      health: '/health',
+      login: '/login',
+      consumo: '/consumo'
+    },
+    timestamp: new Date().toISOString()
+  });
+});
+
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
   const user = USERS.find(u => u.username === username && u.password === password);
   if (user) return res.json({ success: true, token: 'fake-jwt-token' });
-  return res.status(401).json({ success: false, message: 'Invalid credentials' });
+  return res.status(401).json({ success: false, message: 'Credenciais inválidas' });
 });
 
 app.post('/consumo', upload.single('foto'), (req, res) => {
   const { litros, leitura } = req.body;
-  // Example: base value $5 + $2 per 1000 liters, 10% discount
+  // Exemplo: valor base R$5 + R$2 por 1000 litros, desconto de 10%
   const base = 5;
   const valor = base + (Number(litros) / 1000) * 2;
   const desconto = 0.1;
   const valorFinal = valor * (1 - desconto);
   res.json({
-    mensagem: 'Bill generated successfully!',
+    mensagem: 'Conta gerada com sucesso!',
     valorOriginal: valor.toFixed(2),
     desconto: (desconto * 100) + '%',
     valorFinal: valorFinal.toFixed(2),
@@ -48,4 +62,4 @@ app.get('/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
-app.listen(PORT, () => console.log(`Backend running on port ${PORT}`)); 
+app.listen(PORT, () => console.log(`Backend rodando na porta ${PORT}`)); 
