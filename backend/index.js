@@ -7,7 +7,7 @@ const fs = require('fs');
 
 const app = express();
 
-// Configuração CORS mais permissiva
+// Configuração CORS mais permissiva - VERSION 2.0
 app.use(cors({
   origin: ['https://acqua-test2.vercel.app', 'http://localhost:3000'],
   credentials: true,
@@ -31,7 +31,7 @@ const USERS = [{ username: 'admin', password: '1234' }];
 // Rota raiz
 app.get('/', (req, res) => {
   res.json({ 
-    message: 'AcquaTest Backend API',
+    message: 'AcquaTest Backend API - VERSION 2.0',
     status: 'running',
     endpoints: {
       health: '/health',
@@ -70,4 +70,4 @@ app.get('/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
 
-app.listen(PORT, () => console.log(`Backend rodando na porta ${PORT}`)); 
+app.listen(PORT, () => console.log(`Backend rodando na porta ${PORT} - VERSION 2.0`)); 
