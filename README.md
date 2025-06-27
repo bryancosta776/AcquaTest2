@@ -97,3 +97,44 @@ After deployment, update the `frontend/vercel.json` file with your backend URL:
 - ✅ Automatic bill calculation
 - ✅ Responsive interface
 - ✅ Automated deployment 
+
+# Como rodar o projeto
+
+## Pré-requisitos
+- Node.js (versão recomendada: 16 ou superior)
+- npm (geralmente já vem com o Node.js)
+
+## Passos para rodar o backend
+
+1. Abra um terminal e navegue até a pasta do projeto:
+   ```sh
+   cd backend
+   ```
+2. Instale as dependências:
+   ```sh
+   npm install
+   ```
+3. Inicie o servidor backend:
+   ```sh
+   npm start
+   ```
+
+## Passos para rodar o frontend
+
+1. Abra outro terminal e navegue até a pasta do projeto:
+   ```sh
+   cd frontend
+   ```
+2. Instale as dependências:
+   ```sh
+   npm install
+   ```
+3. Inicie o servidor frontend:
+   ```sh
+   npm start
+   ```
+
+## Acessando a aplicação
+
+- O frontend estará disponível em: http://localhost:3000
+- O backend estará disponível em: http://localhost:5000 (ou a porta configurada) 
