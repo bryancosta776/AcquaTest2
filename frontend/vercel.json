@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "acquatest-frontend",
   "builds": [
     {
       "src": "package.json",
@@ -12,32 +11,11 @@
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/favicon.ico",
-      "dest": "/favicon.ico"
-    },
-    {
-      "src": "/manifest.json",
-      "dest": "/manifest.json"
-    },
-    {
-      "src": "/robots.txt",
-      "dest": "/robots.txt"
-    },
-    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
   ],
   "env": {
-    "REACT_APP_API_URL": "https://seu-backend.onrender.com"
-  },
-  "functions": {
-    "app/api/**/*.js": {
-      "runtime": "nodejs18.x"
-    }
+    "REACT_APP_API_URL": "https://acquatest2-1.onrender.com"
   }
 } 
