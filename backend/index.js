@@ -6,10 +6,18 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
-app.use(cors());
+
+// Configuração CORS mais permissiva
+app.use(cors({
+  origin: ['https://acqua-test2.vercel.app', 'http://localhost:3000'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(bodyParser.json());
 
-// Configuration for production (Render)
+// Configuração para produção (Render)
 const PORT = process.env.PORT || 5000;
 
 const uploadDir = path.join(__dirname, 'uploads');
@@ -57,7 +65,7 @@ app.post('/consumo', upload.single('foto'), (req, res) => {
   });
 });
 
-// Health check route for Render
+// Rota de health check para Render
 app.get('/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
 });
